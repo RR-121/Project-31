@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 
 var engine, world, raindrop, umbrellaMan;
 
-var ThuImg1, ThuImg2, ThuImg3, ThuImg4, Thunderbolt1, Thunderbolt2;
+var ThuImg1, ThuImg2, ThuImg3, ThuImg4, Thunderbolt1;
 
 var maxDrops = 250;
 var drops = [];
@@ -48,6 +48,7 @@ function draw(){
 function thunder() {
     if(frameCount % 150 === 0) {
         var num = random(1,4);
+        Thunderbolt1 = createSprite(random(50, 600), random(0, 50), 100, 10);
         switch(num) {
             case 1: Thunderbolt1.addImage(ThuImg1);
             break;
@@ -59,7 +60,6 @@ function thunder() {
             break;
             default: break;
         }
-        Thunderbolt1 = createSprite(random(50, 600), random(0, 50), 100, 10);
         Thunderbolt1.lifetime = 15;
 
     }
